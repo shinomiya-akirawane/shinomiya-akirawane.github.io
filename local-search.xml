@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>Red-Black Tree(1)</title>
+    <link href="/2022/03/03/RBTree(1)/"/>
+    <url>/2022/03/03/RBTree(1)/</url>
+    
+    <content type="html"><![CDATA[<h3 id="Introduction-to-Red-Black-Tree"><a href="#Introduction-to-Red-Black-Tree" class="headerlink" title="Introduction to Red-Black Tree"></a>Introduction to Red-Black Tree</h3><p>Red-Black Tree is a kind of <strong>BST</strong> <em>(Binary Search Tree)</em>. It support high efficiency search <em>(log n)</em>, although it required more storage space. As we know that time can be saved by using more space. </p><p>It is quite similar to BST, the only diffence is that each node has its own color. There are five rules to judge whether the tree is a legal Red-Black Tree:</p><ol><li>Each node is either&#x3D;&#x3D;black #060606&#x3D;&#x3D; or &#x3D;&#x3D;red #FC1E00&#x3D;&#x3D;</li><li>The root node is &#x3D;&#x3D;black #060606&#x3D;&#x3D;</li><li>Each leaves is &#x3D;&#x3D;black #060606&#x3D;&#x3D;</li><li><strong>Each path from leaves to root should have same amount of &#x3D;&#x3D;black #060606&#x3D;&#x3D; nodes</strong></li><li>If a node is &#x3D;&#x3D;red  #FC1E00&#x3D;&#x3D;, its children are &#x3D;&#x3D;black #060606&#x3D;&#x3D;</li></ol><h3 id="Provements-of-time-complexity-Red-Black-Tree"><a href="#Provements-of-time-complexity-Red-Black-Tree" class="headerlink" title="Provements of time complexity Red-Black Tree"></a>Provements of time complexity Red-Black Tree</h3><p><strong>Theorem (to be prove):</strong> The maximum height of a <strong>N</strong> nodes BRTree is <strong>2log(N+1)</strong></p><p>The inverse negative proposition of original theorem is: A tree has a height of <strong>h</strong>, it has at least $2^(\frac{h}{2}) -1$ nodes. If we can prove the inverse negative proposition is true, the original one is also true.</p><p>Define <strong>bh(x)</strong> as the amount of black nodes of each path from node x to leaves. According to BRTree rule(4),<br>each path has same amount of black nodes, which means that the value of bh(x) is constant.According to BRTree rule(5), the red nodes is more than black nodes in each path: <strong>bh(x) &gt; h&#x2F;2</strong>.</p><p>In that case, the theorem we need to prove is equal to ‘A tree has a height of h, it has at least 2<sup>bh(x)</sup>-1 &#x3D;&#x3D;black #060606&#x3D;&#x3D; nodes. ‘</p><p>Then we can prove it by <em>mathematical induction</em>:<br><strong>Basic situation</strong>: when the height of tree is 0:<br>The amount of black nodes is 0 and bh(x) &#x3D; 0,2<sup>bh(x)</sup> -1 is 0, so the proposition is <strong>True</strong>.<br><strong>Assumption</strong>: Assume when the height of tree is h-1,  it has at least 2<sup>bh(x)-1</sup>-1.<br><strong>Induction</strong>: when the height of tree is <strong>h</strong>, for root,  bh(root). For lc and rc of root, bh (lc) and bh (rc) can equal to <strong>bh(x)</strong> or <strong>bh(x)-1</strong>. From our assumption, lc tree and rc tree of root include at least 2<sup>bh(x)-1</sup>-1. As for the whole tree, the amount of nodes is: 2<sup>bh(x)-1</sup>-1 + 2<sup>bh(x)-1</sup>-1 +1 &#x3D; <strong>2<sup>bh(x)</sup>-1</strong></p><p>Thus we prove that the inverse negative proposition is <strong>True</strong>. The original thorem is also True.</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>Data Structure,Tree,Search</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Hello World</title>
     <link href="/2022/02/21/hello-world/"/>
     <url>/2022/02/21/hello-world/</url>

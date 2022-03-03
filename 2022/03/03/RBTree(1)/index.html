@@ -16,20 +16,21 @@
   <meta name="author" content="John Doe">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+    <meta name="description" content="Introduction to Red-Black TreeRed-Black Tree is a kind of BST (Binary Search Tree). It support high efficiency search (log n), although it required more storage space. As we know that time can be save">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://example.com/2022/02/21/hello-world/index.html">
+<meta property="og:title" content="Red-Black Tree(1)">
+<meta property="og:url" content="http://example.com/2022/03/03/RBTree(1)/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="Introduction to Red-Black TreeRed-Black Tree is a kind of BST (Binary Search Tree). It support high efficiency search (log n), although it required more storage space. As we know that time can be save">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2022-02-21T13:31:13.675Z">
-<meta property="article:modified_time" content="2022-02-21T13:31:13.675Z">
+<meta property="article:published_time" content="2022-03-03T22:55:24.322Z">
+<meta property="article:modified_time" content="2022-03-03T22:55:24.472Z">
 <meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Data Structure,Tree,Search">
 <meta name="twitter:card" content="summary_large_image">
   
   
-  <title>Hello World - Hexo</title>
+  <title>Red-Black Tree(1) - Hexo</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4/dist/css/bootstrap.min.css" />
 
@@ -175,7 +176,7 @@
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="Hello World">
+            <span class="h2" id="subtitle" title="Red-Black Tree(1)">
               
             </span>
 
@@ -185,8 +186,8 @@
   
     <span class="post-meta">
       <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-      <time datetime="2022-02-21 13:31" pubdate>
-        February 21, 2022 pm
+      <time datetime="2022-03-03 22:55" pubdate>
+        March 3, 2022 pm
       </time>
     </span>
   
@@ -196,7 +197,7 @@
   
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      367 字
+      1.9k 字
     </span>
   
 
@@ -205,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      4 分钟
+      16 分钟
     </span>
   
 
@@ -234,28 +235,37 @@
         <div class="py-5" id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Hello World</h1>
+            <h1 style="display: none">Red-Black Tree(1)</h1>
             
             <div class="markdown-body">
-              <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+              <h3 id="Introduction-to-Red-Black-Tree"><a href="#Introduction-to-Red-Black-Tree" class="headerlink" title="Introduction to Red-Black Tree"></a>Introduction to Red-Black Tree</h3><p>Red-Black Tree is a kind of <strong>BST</strong> <em>(Binary Search Tree)</em>. It support high efficiency search <em>(log n)</em>, although it required more storage space. As we know that time can be saved by using more space. </p>
+<p>It is quite similar to BST, the only diffence is that each node has its own color. There are five rules to judge whether the tree is a legal Red-Black Tree:</p>
+<ol>
+<li>Each node is either&#x3D;&#x3D;black #060606&#x3D;&#x3D; or &#x3D;&#x3D;red #FC1E00&#x3D;&#x3D;</li>
+<li>The root node is &#x3D;&#x3D;black #060606&#x3D;&#x3D;</li>
+<li>Each leaves is &#x3D;&#x3D;black #060606&#x3D;&#x3D;</li>
+<li><strong>Each path from leaves to root should have same amount of &#x3D;&#x3D;black #060606&#x3D;&#x3D; nodes</strong></li>
+<li>If a node is &#x3D;&#x3D;red  #FC1E00&#x3D;&#x3D;, its children are &#x3D;&#x3D;black #060606&#x3D;&#x3D;</li>
+</ol>
+<h3 id="Provements-of-time-complexity-Red-Black-Tree"><a href="#Provements-of-time-complexity-Red-Black-Tree" class="headerlink" title="Provements of time complexity Red-Black Tree"></a>Provements of time complexity Red-Black Tree</h3><p><strong>Theorem (to be prove):</strong> The maximum height of a <strong>N</strong> nodes BRTree is <strong>2log(N+1)</strong></p>
+<p>The inverse negative proposition of original theorem is: A tree has a height of <strong>h</strong>, it has at least $2^(\frac{h}{2}) -1$ nodes. If we can prove the inverse negative proposition is true, the original one is also true.</p>
+<p>Define <strong>bh(x)</strong> as the amount of black nodes of each path from node x to leaves. According to BRTree rule(4),<br>each path has same amount of black nodes, which means that the value of bh(x) is constant.According to BRTree rule(5), the red nodes is more than black nodes in each path: <strong>bh(x) &gt; h&#x2F;2</strong>.</p>
+<p>In that case, the theorem we need to prove is equal to ‘A tree has a height of h, it has at least 2<sup>bh(x)</sup>-1 &#x3D;&#x3D;black #060606&#x3D;&#x3D; nodes. ‘</p>
+<p>Then we can prove it by <em>mathematical induction</em>:<br><strong>Basic situation</strong>: when the height of tree is 0:<br>The amount of black nodes is 0 and bh(x) &#x3D; 0,2<sup>bh(x)</sup> -1 is 0, so the proposition is <strong>True</strong>.<br><strong>Assumption</strong>: Assume when the height of tree is h-1,  it has at least 2<sup>bh(x)-1</sup>-1.<br><strong>Induction</strong>: when the height of tree is <strong>h</strong>, for root,  bh(root). For lc and rc of root, bh (lc) and bh (rc) can equal to <strong>bh(x)</strong> or <strong>bh(x)-1</strong>. From our assumption, lc tree and rc tree of root include at least 2<sup>bh(x)-1</sup>-1. As for the whole tree, the amount of nodes is: 2<sup>bh(x)-1</sup>-1 + 2<sup>bh(x)-1</sup>-1 +1 &#x3D; <strong>2<sup>bh(x)</sup>-1</strong></p>
+<p>Thus we prove that the inverse negative proposition is <strong>True</strong>. The original thorem is also True.</p>
 
             </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
                 
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/Data-Structure-Tree-Search/">Data Structure,Tree,Search</a>
+                    
+                  </div>
                 
               </div>
               
@@ -270,15 +280,15 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/03/03/RBTree(1)/">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">Red-Black Tree(1)</span>
-                        <span class="visible-mobile">Previous</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
+                    
+                      <a href="/2022/02/21/hello-world/">
+                        <span class="hidden-mobile">Hello World</span>
+                        <span class="visible-mobile">Next</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
                     
                   </article>
                 </div>
