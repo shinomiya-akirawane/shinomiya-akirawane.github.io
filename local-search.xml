@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>从github clone仓库或hexo d时发生问题的解决方案</title>
+    <link href="/2022/03/13/hexo-d%20problem%20solutions/"/>
+    <url>/2022/03/13/hexo-d%20problem%20solutions/</url>
+    
+    <content type="html"><![CDATA[<p>由于github在国内被墙，所以开着vpn合并代码或者提交hexo编辑内容时常常会出现报错<br><code>fatal:unable to access &quot;网址名字&quot;</code><br><strong>解决方法：</strong><br>    1. 在hexo博客所在的文件夹里运行命令行，输入<code>git config --global --unset http.proxy</code><br>    2. 在hexo博客所在的文件夹里运行命令行， 输入<code>git config --global --unset-all https.proxy</code><br>    3.  在hexo博客所在的文件夹里运行命令行，输入<code>git config --global --unset http.sslverify</code><br>    4.  在系统设置中找到<strong>凭据管理器</strong>，删除所有带有<strong>github</strong>的凭据<br>然后问题大概就可以被解决了…（虽然有时候显示还是没上传到但是其实是上传了的，所以请随时打开网页检查是否真的未上传）这种情况就是所谓<em>玄学代码</em>了</p>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>hexo，blog，vpn</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>Use Bootstrap5.x in Django3.x</title>
     <link href="/2022/03/13/Use%20Bootstrap%20in%20Django/"/>
     <url>/2022/03/13/Use%20Bootstrap%20in%20Django/</url>
