@@ -49,7 +49,7 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/xcode.min.css" />
     
   
 
@@ -119,18 +119,6 @@
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 Archives
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                Categories
               </a>
             </li>
           
@@ -239,8 +227,8 @@
             
             <div class="markdown-body">
               <h3 id="Explanation-of-bucket-sorting"><a href="#Explanation-of-bucket-sorting" class="headerlink" title="Explanation of bucket sorting"></a>Explanation of bucket sorting</h3><h4 id="Simple-Version"><a href="#Simple-Version" class="headerlink" title="Simple Version"></a>Simple Version</h4><p>To start with, assuming we have this set of numbers and we want to sort it in <strong>inscending order</strong>:</p>
-<figure class="highlight apache"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">The</span> original set of number: <span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">5</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">7</span><br></code></pre></td></tr></table></figure>
-<figure class="highlight apache"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">The</span> result set of number: <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span><br></code></pre></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">The</span> original set of number: <span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">5</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">7</span><br></code></pre></div></td></tr></table></figure>
+<figure class="highlight apache"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs apache"><span class="hljs-attribute">The</span> result set of number: <span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">3</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>,<span class="hljs-number">7</span><br></code></pre></div></td></tr></table></figure>
 
 <p>To use bucket sort to finish this task, firstly we need to build buckets to contain the numbers. Note that the amount of buckets depends on the range of set:</p>
 <p><img src="/./images/Bs1.jpg" srcset="/img/loading.gif" lazyload></p>
@@ -256,9 +244,9 @@
 <li>When the data is not homogenous, the efficiency decrease. If the data is exact concertrate, the bucket sort may decrease to the sort inside the bucket.</li>
 <li>A bad choice of range can also cause the efficiency decrease or the waste of space. The algorithm is sensed to choice of range.<h3 id="Implementation"><a href="#Implementation" class="headerlink" title="Implementation"></a>Implementation</h3><h4 id="Python"><a href="#Python" class="headerlink" title="Python"></a>Python</h4></li>
 </ol>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs python?linenums">def bucketSort(list):<br>    minNum = min(list)<br>    maxNum = max(list)<br>    buckets = []<br>    for i in range(minNum,maxNum+1,2):<br>        buckets.append([])<br>    for num in list:<br>        index = (num-minNum)//2<br>        buckets[index].append(num)<br>        buckets[index].sort()<br>    for bucket in buckets:<br>        for num in bucket:<br>            print(num)<br><br>bucketSort([3,3,6,5,2,1,7])<br></code></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs python?linenums">def bucketSort(list):<br>    minNum = min(list)<br>    maxNum = max(list)<br>    buckets = []<br>    for i in range(minNum,maxNum+1,2):<br>        buckets.append([])<br>    for num in list:<br>        index = (num-minNum)//2<br>        buckets[index].append(num)<br>        buckets[index].sort()<br>    for bucket in buckets:<br>        for num in bucket:<br>            print(num)<br><br>bucketSort([3,3,6,5,2,1,7])<br></code></pre></div></td></tr></table></figure>
 
-<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs java?linenums">import java.util.*;<br>class Buckets&#123;<br>    public int min;<br>    public int max;<br>    ArrayList&lt;ArrayList&lt;Integer&gt;&gt; buckets = new ArrayList&lt;ArrayList&lt;Integer&gt;&gt;();<br>    public Buckets(int min,int max)&#123;<br>        for (int i = min;i&lt;=max;i+=2)&#123;<br>            buckets.add(new ArrayList&lt;Integer&gt;()); <br>        &#125;<br>        this.min = min;<br>        this.max = max;<br>    &#125;<br>    public void fillBucket(int n)&#123;<br>        int index = (n-this.min)/2;<br>        this.buckets.get(index).add(n);<br>        Collections.sort(this.buckets.get(index));<br>    &#125;<br>    public ArrayList&lt;Integer&gt; getAllNums()&#123;<br>        ArrayList&lt;Integer&gt; ans = new ArrayList&lt;Integer&gt;();<br>        for(ArrayList&lt;Integer&gt; bucket:this.buckets)&#123;<br>            for(int num:bucket)&#123;<br>                ans.add(num);<br>            &#125;<br>        &#125;<br>        return ans;<br>    &#125;<br>&#125;<br>public class BucketSort &#123;<br>    public static void main(String[] args) &#123; <br>        int[] list = &#123;3,3,6,5,2,1,7&#125;;<br>        Buckets buckets = new Buckets(1, 7);<br>        for(int num:list)&#123;<br>            buckets.fillBucket(num);<br>        &#125;<br>        ArrayList&lt;Integer&gt; ans = buckets.getAllNums();<br>        System.out.println(ans);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="Java"><a href="#Java" class="headerlink" title="Java"></a>Java</h4><figure class="highlight plaintext"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs java?linenums">import java.util.*;<br>class Buckets&#123;<br>    public int min;<br>    public int max;<br>    ArrayList&lt;ArrayList&lt;Integer&gt;&gt; buckets = new ArrayList&lt;ArrayList&lt;Integer&gt;&gt;();<br>    public Buckets(int min,int max)&#123;<br>        for (int i = min;i&lt;=max;i+=2)&#123;<br>            buckets.add(new ArrayList&lt;Integer&gt;()); <br>        &#125;<br>        this.min = min;<br>        this.max = max;<br>    &#125;<br>    public void fillBucket(int n)&#123;<br>        int index = (n-this.min)/2;<br>        this.buckets.get(index).add(n);<br>        Collections.sort(this.buckets.get(index));<br>    &#125;<br>    public ArrayList&lt;Integer&gt; getAllNums()&#123;<br>        ArrayList&lt;Integer&gt; ans = new ArrayList&lt;Integer&gt;();<br>        for(ArrayList&lt;Integer&gt; bucket:this.buckets)&#123;<br>            for(int num:bucket)&#123;<br>                ans.add(num);<br>            &#125;<br>        &#125;<br>        return ans;<br>    &#125;<br>&#125;<br>public class BucketSort &#123;<br>    public static void main(String[] args) &#123; <br>        int[] list = &#123;3,3,6,5,2,1,7&#125;;<br>        Buckets buckets = new Buckets(1, 7);<br>        for(int num:list)&#123;<br>            buckets.fillBucket(num);<br>        &#125;<br>        ArrayList&lt;Integer&gt; ans = buckets.getAllNums();<br>        System.out.println(ans);<br>    &#125;<br>&#125;<br></code></pre></div></td></tr></table></figure>
             </div>
             <hr>
             <div>
@@ -300,6 +288,35 @@
               
             </div>
 
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/twikoo@1/dist/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"twikoo-blog-9gnu49trabeacd93","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.plugins.initFancyBox('#twikoo .tk-content img:not(.tk-owo-emotion)');
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
             
           </article>
         </div>
@@ -360,6 +377,30 @@
      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
 
   
 
@@ -417,6 +458,8 @@
   
 
 
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 

@@ -47,7 +47,7 @@
     
     
       
-      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/github-gist.min.css" />
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10/styles/xcode.min.css" />
     
   
 
@@ -117,18 +117,6 @@
               <a class="nav-link" href="/archives/">
                 <i class="iconfont icon-archive-fill"></i>
                 Archives
-              </a>
-            </li>
-          
-        
-          
-          
-          
-          
-            <li class="nav-item">
-              <a class="nav-link" href="/categories/">
-                <i class="iconfont icon-category-fill"></i>
-                Categories
               </a>
             </li>
           
@@ -241,11 +229,11 @@
 <p><strong>Django</strong> is a powerful WEB app framework. It has long history and completed document. The new project is with a auto-generate SQL database.</p>
 <h3 id="Steps-to-insert-Bootstrap-in-Django"><a href="#Steps-to-insert-Bootstrap-in-Django" class="headerlink" title="Steps to insert Bootstrap in Django"></a>Steps to insert Bootstrap in Django</h3><h4 id="Download-Django-and-Bootstrap"><a href="#Download-Django-and-Bootstrap" class="headerlink" title="Download Django and Bootstrap."></a>Download Django and Bootstrap.</h4><p>This is the offical download instruction of Django: <a target="_blank" rel="noopener" href="https://www.djangoproject.com/download/">https://www.djangoproject.com/download/</a><br>This is the offical download instruction of Bootstrap:<br><a target="_blank" rel="noopener" href="https://getbootstrap.com/">https://getbootstrap.com/</a></p>
 <p>To check whether they are downloaded and ready to use:<br>Open Terminal and enter:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><div class="code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><pre><code class="hljs javascript">python -m django --version<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript">python -m django --version<br></code></pre></div></td></tr></table></figure>
 <p>If you see <strong>‘x.x.x’</strong>, Django has been set correctly.</p>
 <p>If you can see a folder called ‘boostrap-x.x.x-dist’, Bootstrap has been set correctly.</p>
 <h4 id="Set-up-a-new-Django-project"><a href="#Set-up-a-new-Django-project" class="headerlink" title="Set up a new Django project"></a>Set up a new Django project</h4><p>Open terminal, enter:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">python -m django startproject * you project name *<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript">python -m django startproject * you project name *<br></code></pre></div></td></tr></table></figure>
 <p><em>attention: make sure you are in the folder where you want to put your new project in. Otherwise you highlypossible can’t find your project after you build it.</em></p>
 <p>Then you will see a new folder appear.</p>
 <h4 id="Explaination-about-the-structure-of-Django-project-folder"><a href="#Explaination-about-the-structure-of-Django-project-folder" class="headerlink" title="Explaination about the structure of Django project folder"></a>Explaination about the structure of Django project folder</h4><p><img src="/images/1.png" srcset="/img/loading.gif" lazyload alt="The folder structure"></p>
@@ -271,10 +259,10 @@
 <h4 id="Explaining-about-bootstrap-files"><a href="#Explaining-about-bootstrap-files" class="headerlink" title="Explaining about bootstrap files"></a>Explaining about bootstrap files</h4><p><img src="/images/3.png" srcset="/img/loading.gif" lazyload alt="Bootstrap files"></p>
 <p>The css and js stores all inital bootstrap css files and js files. Ensure to import them to every html you write.</p>
 <h4 id="Essential-modify-of-files"><a href="#Essential-modify-of-files" class="headerlink" title="Essential modify of files"></a>Essential modify of files</h4><ul>
-<li><strong>In view.py and urls.py</strong>:<br>  add the following codes to views.py:<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">from</span> django.<span class="hljs-property">shortcuts</span> <span class="hljs-keyword">import</span> render<br><span class="hljs-keyword">from</span> django.<span class="hljs-property">http</span> <span class="hljs-keyword">import</span> <span class="hljs-title class_">HttpRequest</span>,<span class="hljs-title class_">HttpResponse</span><br>def <span class="hljs-title function_">home</span>(request):<br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">render</span>(request,<span class="hljs-string">&#x27;home.html&#x27;</span>)<br></code></pre></td></tr></table></figure>
-add the following code to urls.py:<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">from</span> django.<span class="hljs-property">urls</span> <span class="hljs-keyword">import</span> path<br><span class="hljs-keyword">from</span> . <span class="hljs-keyword">import</span> views<br><span class="hljs-keyword">from</span> django.<span class="hljs-property">contrib</span> <span class="hljs-keyword">import</span> admin<br>urlpatterns = [<br>    <span class="hljs-title function_">path</span>(<span class="hljs-string">&#x27;admin/&#x27;</span>, admin.<span class="hljs-property">site</span>.<span class="hljs-property">urls</span>),<br>    <span class="hljs-title function_">path</span>(<span class="hljs-string">&#x27;home/&#x27;</span>, views.<span class="hljs-property">home</span>),<br>]<br></code></pre></td></tr></table></figure>
+<li><strong>In view.py and urls.py</strong>:<br>  add the following codes to views.py:<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">from</span> django.<span class="hljs-property">shortcuts</span> <span class="hljs-keyword">import</span> render<br><span class="hljs-keyword">from</span> django.<span class="hljs-property">http</span> <span class="hljs-keyword">import</span> <span class="hljs-title class_">HttpRequest</span>,<span class="hljs-title class_">HttpResponse</span><br>def <span class="hljs-title function_">home</span>(request):<br>    <span class="hljs-keyword">return</span> <span class="hljs-title function_">render</span>(request,<span class="hljs-string">&#x27;home.html&#x27;</span>)<br></code></pre></div></td></tr></table></figure>
+add the following code to urls.py:<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-keyword">from</span> django.<span class="hljs-property">urls</span> <span class="hljs-keyword">import</span> path<br><span class="hljs-keyword">from</span> . <span class="hljs-keyword">import</span> views<br><span class="hljs-keyword">from</span> django.<span class="hljs-property">contrib</span> <span class="hljs-keyword">import</span> admin<br>urlpatterns = [<br>    <span class="hljs-title function_">path</span>(<span class="hljs-string">&#x27;admin/&#x27;</span>, admin.<span class="hljs-property">site</span>.<span class="hljs-property">urls</span>),<br>    <span class="hljs-title function_">path</span>(<span class="hljs-string">&#x27;home/&#x27;</span>, views.<span class="hljs-property">home</span>),<br>]<br></code></pre></div></td></tr></table></figure>
 <em>Attention: in the newest version of Django, the original ‘url’ are changed to ‘path’</em></li>
-<li><strong>In the home.html in templates folder</strong><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs javascript">&#123;% load <span class="hljs-keyword">static</span> %&#125;<br>&lt;head&gt;<br><br><span class="hljs-comment">// your html head code</span><br><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span> = <span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span> = <span class="hljs-string">&quot;&#123;% static &#x27;bootstrap/css/bootstrap.min.css&#x27;%&#125;&quot;</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;% static &#x27;css/style.css&#x27;%&#125;&quot;</span> /&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span> = <span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;% static &#x27;css/home.css&#x27;%&#125;&quot;</span>/&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml">// your html body code</span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span> = <span class="hljs-string">&quot;&#123;% static &#x27;bootstrap/js/bootstrap.min.js&#x27; %&#125;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></code></pre></td></tr></table></figure></li>
+<li><strong>In the home.html in templates folder</strong><figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript">&#123;% load <span class="hljs-keyword">static</span> %&#125;<br>&lt;head&gt;<br><br><span class="hljs-comment">// your html head code</span><br><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span> = <span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span> = <span class="hljs-string">&quot;&#123;% static &#x27;bootstrap/css/bootstrap.min.css&#x27;%&#125;&quot;</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;% static &#x27;css/style.css&#x27;%&#125;&quot;</span> /&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span> = <span class="hljs-string">&quot;stylesheet&quot;</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;&#123;% static &#x27;css/home.css&#x27;%&#125;&quot;</span>/&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span></span><br><span class="language-xml"></span><br><span class="language-xml">// your html body code</span><br><span class="language-xml"></span><br><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span> = <span class="hljs-string">&quot;&#123;% static &#x27;bootstrap/js/bootstrap.min.js&#x27; %&#125;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span></span><br></code></pre></div></td></tr></table></figure></li>
 <li><strong>In static folder</strong></li>
 </ul>
 <ol>
@@ -283,12 +271,12 @@ add the following code to urls.py:<figure class="highlight javascript"><table><t
 <li>Copy the css and js files in the <strong>downloaded</strong> bootstrap folders to static correspondence folder.</li>
 </ol>
 <ul>
-<li><strong>In the settings.py</strong><br>Modify following codes, if they are not exist, add them:<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-variable constant_">STATIC_URL</span> = <span class="hljs-string">&#x27;static/&#x27;</span><br><span class="hljs-variable constant_">STATIC_ROOT</span> = os.<span class="hljs-property">path</span>.<span class="hljs-title function_">join</span>(<span class="hljs-variable constant_">BASE_DIR</span>, <span class="hljs-string">&quot;root&quot;</span>)<br><span class="hljs-variable constant_">STATICFILES_DIRS</span> = [ <br>    os.<span class="hljs-property">path</span>.<span class="hljs-title function_">join</span>(<span class="hljs-variable constant_">BASE_DIR</span>, <span class="hljs-string">&quot;statics&quot;</span>), <br>]<br></code></pre></td></tr></table></figure>
+<li><strong>In the settings.py</strong><br>Modify following codes, if they are not exist, add them:<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript"><span class="hljs-variable constant_">STATIC_URL</span> = <span class="hljs-string">&#x27;static/&#x27;</span><br><span class="hljs-variable constant_">STATIC_ROOT</span> = os.<span class="hljs-property">path</span>.<span class="hljs-title function_">join</span>(<span class="hljs-variable constant_">BASE_DIR</span>, <span class="hljs-string">&quot;root&quot;</span>)<br><span class="hljs-variable constant_">STATICFILES_DIRS</span> = [ <br>    os.<span class="hljs-property">path</span>.<span class="hljs-title function_">join</span>(<span class="hljs-variable constant_">BASE_DIR</span>, <span class="hljs-string">&quot;statics&quot;</span>), <br>]<br></code></pre></div></td></tr></table></figure>
 You can check whether the path is correct by enter following codes in Terminal:</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">python manage.<span class="hljs-property">py</span> collectstatic<br></code></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript">python manage.<span class="hljs-property">py</span> collectstatic<br></code></pre></div></td></tr></table></figure>
 <p>Then all the static files in the path will appear in root.</p>
-<h4 id="Run-the-test-server"><a href="#Run-the-test-server" class="headerlink" title="Run the test server"></a>Run the test server</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs javascript">python manage.<span class="hljs-property">py</span> runserver<br></code></pre></td></tr></table></figure>
+<h4 id="Run-the-test-server"><a href="#Run-the-test-server" class="headerlink" title="Run the test server"></a>Run the test server</h4><figure class="highlight javascript"><table><tr><td class="gutter hljs"><div class="hljs code-wrapper"><pre><span class="line">1</span><br></pre></div></td><td class="code"><div class="hljs code-wrapper"><pre><code class="hljs javascript">python manage.<span class="hljs-property">py</span> runserver<br></code></pre></div></td></tr></table></figure>
 <p><strong>You can see the page!</strong></p>
 
             </div>
@@ -338,6 +326,35 @@ You can check whether the path is correct by enter following codes in Terminal:<
               
             </div>
 
+            
+              <!-- Comments -->
+              <article class="comments" id="comments" lazyload>
+                
+                  
+                
+                
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://cdn.jsdelivr.net/npm/twikoo@1/dist/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"twikoo-blog-9gnu49trabeacd93","region":"ap-shanghai","path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              Fluid.plugins.initFancyBox('#twikoo .tk-content img:not(.tk-owo-emotion)');
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+              </article>
             
           </article>
         </div>
@@ -398,6 +415,30 @@ You can check whether the path is correct by enter following codes in Terminal:<
      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
   
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
 
   
 
@@ -455,6 +496,8 @@ You can check whether the path is correct by enter following codes in Terminal:<
   
 
 
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
 
 
 
